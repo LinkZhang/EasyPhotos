@@ -32,18 +32,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.IdRes;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
-import androidx.core.util.Pair;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.recyclerview.widget.SimpleItemAnimator;
-
 import com.huantansheng.easyphotos.EasyPhotos;
 import com.huantansheng.easyphotos.R;
 import com.huantansheng.easyphotos.callback.CompressCallback;
@@ -73,6 +61,18 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Locale;
+
+import androidx.annotation.IdRes;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+import androidx.core.util.Pair;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.SimpleItemAnimator;
 
 public class EasyPhotosActivity extends AppCompatActivity implements AlbumItemsAdapter
         .OnClickListener, PhotosAdapter.OnClickListener, AdListener, View.OnClickListener {
@@ -419,7 +419,7 @@ public class EasyPhotosActivity extends AppCompatActivity implements AlbumItemsA
         //是否自由裁剪
         options.setFreeStyleCropEnabled(Setting.isFreeStyleCrop);
         //设置title
-        options.setToolbarTitle("裁剪");
+        options.setToolbarTitle(getString(R.string.ucrop_crop));
         //隐藏底部控制栏
         options.setHideBottomControls(Setting.isHideUCropControls);
         //toolbar
