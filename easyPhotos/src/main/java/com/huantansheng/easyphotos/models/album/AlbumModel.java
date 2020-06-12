@@ -99,7 +99,7 @@ public class AlbumModel {
      * 获取视频(最长或最小时间)
      */
     private String getDurationCondition() {
-        return String.format(Locale.getDefault(), "%d <%s duration and duration <= %d",
+        return String.format(Locale.US, "%d <%s duration and duration <= %d",
                 Setting.videoMinSecond, Setting.videoMinSecond == 0 ? "" : "=", Setting.videoMaxSecond);
     }
 

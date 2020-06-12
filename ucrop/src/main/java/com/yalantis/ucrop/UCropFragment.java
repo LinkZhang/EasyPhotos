@@ -427,13 +427,13 @@ public class UCropFragment extends Fragment {
 
     private void setAngleText(float angle) {
         if (mTextViewRotateAngle != null) {
-            mTextViewRotateAngle.setText(String.format(Locale.getDefault(), "%.1f°", angle));
+            mTextViewRotateAngle.setText(String.format(Locale.US, "%.1f°", angle));
         }
     }
 
     private void setScaleText(float scale) {
         if (mTextViewScalePercent != null) {
-            mTextViewScalePercent.setText(String.format(Locale.getDefault(), "%d%%", (int) (scale * 100)));
+            mTextViewScalePercent.setText(String.format(Locale.US, "%d%%", (int) (scale * 100)));
         }
     }
 

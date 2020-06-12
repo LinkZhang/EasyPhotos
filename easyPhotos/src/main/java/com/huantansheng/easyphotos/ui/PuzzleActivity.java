@@ -17,15 +17,6 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import androidx.annotation.IdRes;
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.huantansheng.easyphotos.EasyPhotos;
@@ -58,6 +49,15 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Locale;
+
+import androidx.annotation.IdRes;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * 拼图界面
@@ -669,7 +669,7 @@ public class PuzzleActivity extends AppCompatActivity implements View.OnClickLis
             if (fileTypeIsPhoto) {
                 PuzzleLayout puzzleLayout = puzzleView.getPuzzleLayout();
                 for (int i = 0; i < puzzleLayout.getAreaCount(); i++) {
-                    SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+                    SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd", Locale.US);
                     String date = format.format(photos.get(i).time);
                     stickerModel.addTextSticker(this, getSupportFragmentManager(), date, mRootView);
                     stickerModel.currTextSticker.isChecked = true;
@@ -677,7 +677,7 @@ public class PuzzleActivity extends AppCompatActivity implements View.OnClickLis
                     stickerModel.currTextSticker.moveTo(area.centerX(), area.centerY());
                 }
             } else {
-                SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+                SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd", Locale.US);
                 String date = format.format(new Date());
                 stickerModel.addTextSticker(this, getSupportFragmentManager(), date, mRootView);
 
